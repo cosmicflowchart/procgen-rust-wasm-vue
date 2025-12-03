@@ -34,3 +34,10 @@ coverage
 
 # Vitest
 __screenshots__/
+
+# Rust build
+*/target/
+
+# wasm
+wasm/*
+!wasm/package.json

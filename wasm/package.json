@@ -1,0 +1,16 @@
+{
+  "name": "procgen",
+  "version": "0.1.0",
+  "files": [
+    "procgen_bg.wasm",
+    "procgen_bg.js",
+    "procgen_bg_bg.js",
+    "procgen_bg.d.ts"
+  ],
+  "module": "procgen.js",
+  "types": "procgen.d.ts",
+  "sideEffects": [
+    "./procgen.js",
+    "./snippets/*"
+  ]
+}

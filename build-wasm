@@ -1,0 +1,11 @@
+#! /bin/sh
+
+# Build wasm from rust
+cargo build --lib --target wasm32-unknown-unknown --manifest-path procgen/Cargo.toml --release
+
+# Generate typescript binding from wasm
+wasm-bindgen procgen/target/wasm32-unknown-unknown/release/procgen.wasm --out-dir wasm --typescript --target bundler
+
+# Optimize
+wasm-opt wasm/procgen_bg.wasm -o wasm/procgen_bg.wasm-opt.wasm -O
+mv wasm/procgen_bg.wasm-opt.wasm wasm/procgen_bg.wasm
